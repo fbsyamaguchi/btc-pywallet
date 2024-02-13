@@ -42,7 +42,7 @@ def public_key_to_address(public_key_hex):
 # Function to generate a mnemonic
 def generate_mnemonic(strength=128):
     """Generate a mnemonic with the specified strength."""
-    mnemo = Mnemonic("english")
+    mnemo = Mnemonic("portuguese")
     return mnemo.generate(strength=strength)
 
 # Function to create a root key from a mnemonic and passphrase
@@ -255,7 +255,7 @@ class OfflineWalletApp:
         mnemonic = self.import_mnemonic_entry.get()
         passphrase = self.import_passphrase_entry.get()
 
-        if not Mnemonic("english").check(mnemonic):
+        if not Mnemonic("portuguese").check(mnemonic):
             messagebox.showerror("Error", "Invalid mnemonic. Please check and try again.")
             return
 
@@ -267,7 +267,7 @@ class OfflineWalletApp:
 def main():
     """Main function to run the Offline Wallet Application."""
     root = tk.Tk()
-    root.geometry("1000x500")
+    root.geometry("950x600")
     app = OfflineWalletApp(root)
     root.mainloop()
 
